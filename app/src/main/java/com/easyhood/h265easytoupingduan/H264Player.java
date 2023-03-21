@@ -29,12 +29,6 @@ public class H264Player implements SocketLive.SocketCallback{
         try {
             int formatWidth = mWidth;
             int formatHeight = mHeight;
-            if ((formatWidth & 1) == 1) {
-                formatWidth--;
-            }
-            if ((formatHeight & 1) == 1) {
-                formatHeight--;
-            }
             mediaCodec = MediaCodec.createEncoderByType(MediaFormat.MIMETYPE_VIDEO_AVC);
             final MediaFormat format = MediaFormat.
                     createVideoFormat(MediaFormat.MIMETYPE_VIDEO_AVC, formatWidth, formatHeight);
